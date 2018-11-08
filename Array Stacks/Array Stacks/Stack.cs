@@ -40,14 +40,17 @@ namespace Array_Stacks
         public T Pop()
         {
             //if count is 1/4 of array length, resize half array length. very optional
-
+            if (stack.Length == Count / 4)
+            {
+                Resize(stack.Length / 2);
+            }
             Count--;
             return stack[Count];
         }
 
         public T Peek()
         {
-            return stack[Count-1];
+            return stack[Count - 1];
         }
 
         public bool IsEmpty()
